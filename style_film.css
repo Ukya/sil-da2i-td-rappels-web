@@ -1,0 +1,436 @@
+/* Définition des polices personnalisées */
+
+@font-face 
+{
+    font-family: 'seasalt-webfont';
+    src: url('font/seasalt-webfont.woff2') format('woff2'),
+         url('font/seasalt-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Page d'acceuil*/
+
+#bloc_page
+{
+    width: 1500px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.liste_index
+{
+    background-color: rgb(199, 237, 249);
+    border-top: 3px solid rgb(0, 104, 137);
+    border-bottom: 3px solid rgb(0, 104, 137);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.liste_index h1
+{
+    text-decoration: underline;
+}
+
+.liste_index a, .liste_index a:visited
+{
+    text-decoration: none;
+    color: blue;
+}
+
+#banniere
+{
+    margin-bottom: 10px;
+}
+
+#banniere img
+{
+    display: block;
+    margin: auto;
+    width: 1200px;
+}
+
+#bloc_body
+{
+	display: flex;
+    flex-direction: row;
+}
+
+nav
+{
+	background-color: rgb(0, 104, 137);
+    height: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+nav span
+{
+	margin: 5px;
+}
+
+nav a, nav a:visited
+{
+    text-decoration: none;
+    color: white;
+}
+
+#bloc_sections
+{
+    background-color: rgb(255, 248, 186);
+    border-top: 3px solid rgb(0, 104, 137);
+    border-left: 3px solid rgb(0, 104, 137);
+    border-right: 3px solid rgb(0, 104, 137);
+    width: 100%;
+}
+
+#section_informations
+{
+    margin-top: 10px;
+	display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+h1, a
+{
+    font-family: 'seasalt-webfont', Arial, sans-serif;
+    font-size: 42px;
+}
+
+h2, h3
+{
+    font-family: 'seasalt-webfont', Arial, sans-serif;
+    font-size: 32px;
+}
+
+#film_poster
+{
+    width: 30%;
+    margin: auto;
+}
+
+#film_poster img
+{
+    max-width:100%;
+    max-height:100%;
+    border-radius: 7px;
+}
+
+#film_article
+{
+	padding: 10px;
+    width: 40%;
+    background-color: rgb(199, 237, 249);
+	border: 3px solid rgb(0, 104, 137);
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#film_aside
+{
+	display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 20%;
+    background-color: rgb(199, 237, 249);
+    border: 3px solid rgb(0, 104, 137);
+    border-radius: 7px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#section_images
+{
+    background-color: rgb(199, 237, 249);
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-top: 3px solid rgb(0, 104, 137);
+    border-bottom: 3px solid rgb(0, 104, 137);
+}
+
+.film_img
+{
+	width: 300px;
+}
+
+figure
+{
+	text-align: center;
+}
+
+#section_realisateur
+{
+    background-color: rgb(199, 237, 249);
+    padding: 10px;
+    border-top: 3px solid rgb(0, 104, 137);
+    border-bottom: 3px solid rgb(0, 104, 137);
+    margin-bottom: 10px;
+}
+
+#section_realisateur div
+{
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(255, 248, 186);
+    border: 3px solid rgb(0, 104, 137);
+    border-radius: 10px;
+}
+
+#section_realisateur img
+{
+    width: 15%;
+}
+
+#section_realisateur span
+{
+    font-family: 'seasalt-webfont', Arial, sans-serif;
+    font-size: 22px;
+    vertical-align: top;
+    margin-left: 10px;
+}
+
+
+#section_acteurs
+{
+    background-color: rgb(199, 237, 249);
+    padding: 10px;
+    border-top: 3px solid rgb(0, 104, 137);
+}
+
+#section_acteurs div
+{
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(255, 248, 186);
+    border: 3px solid rgb(0, 104, 137);
+    border-radius: 10px;
+}
+
+#section_acteurs img
+{
+    width: 15%;
+}
+
+#section_acteurs span
+{
+    font-family: 'seasalt-webfont', Arial, sans-serif;
+    font-size: 22px;
+    vertical-align: top;
+    margin-left: 10px;
+}
+
+footer
+{
+    background-color: rgb(255, 248, 186);
+    font-family: 'seasalt-webfont', Arial, sans-serif;
+    font-size: 22px;
+    border: 3px solid rgb(0, 104, 137);
+    text-align: center;
+}
+
+/* Page Directeur */
+
+#directeur_aside
+{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 18%;
+    background-color: rgb(199, 237, 249);
+    border: 3px solid rgb(0, 104, 137);
+    border-radius: 10px;
+}
+
+#directeur_article
+{
+    padding: 15px;
+    width: 75%;
+    background-color: rgb(199, 237, 249);
+    border: 3px solid rgb(0, 104, 137);
+    border-radius: 10px;
+}
+
+#section_filmographie
+{
+    background-color: rgb(199, 237, 249);
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    border-top: 3px solid rgb(0, 104, 137);
+    padding-left: 50px;
+}
+
+#directeur_aside img
+{
+    width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Page Acteur */
+#bloc_repeat
+{
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 500px) and (orientation: portrait)
+{
+    #banniere img
+    {
+        width: 500px;
+    }
+
+    #bloc_page
+    {
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    #bloc_body
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav
+    {
+        background-color: rgb(0, 104, 137);
+        height: 50px;
+        justify-content: space-around;
+        display: flex;
+        flex-direction: row;
+    }
+
+    #section_informations
+    {
+        width: 480px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #film_article
+    {
+        margin-bottom: 10px;
+        border-radius: 0px;
+        border-right: none;
+        border-left: none;
+        width: 100%;
+    }
+
+    #film_aside
+    {
+        border-radius: 0px;
+        border-right: none;
+        border-left: none;
+        width: 100%;
+    }
+
+    /* Page Directeur */
+
+    #directeur_aside
+    {
+        margin-bottom: 10px;
+        border-radius: 0px;
+        border-right: none;
+        border-left: none;
+        width: 100%;
+    }
+
+    #directeur_article
+    {
+        border-radius: 0px;
+        border-right: none;
+        border-left: none;
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 500px) and (orientation: landscape)
+{
+    #banniere img
+    {
+        width: 800px;
+    }
+
+    #bloc_page
+    {
+        width: 800px;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    #bloc_body
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav
+    {
+        background-color: rgb(0, 104, 137);
+        height: 50px;
+        justify-content: space-around;
+        display: flex;
+        flex-direction: row;
+    }
+
+    #section_informations
+    {
+        width: 780px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #film_article
+    {
+        margin-bottom: 10px;
+        border-radius: 0px;
+        border-right: none;
+        border-left: none;
+        width: 100%;
+    }
+
+    #film_aside
+    {
+        border-radius: 0px;
+        border-right: none;
+        border-left: none;
+        width: 100%;
+    }
+
+    /* Page Directeur */
+
+    #directeur_aside
+    {
+        margin-bottom: 10px;
+        border-radius: 0px;
+        border-right: none;
+        border-left: none;
+        width: 100%;
+    }
+
+    #directeur_article
+    {
+        border-radius: 0px;
+        border-right: none;
+        border-left: none;
+        width: 100%;
+    }
+}
