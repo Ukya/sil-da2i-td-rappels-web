@@ -92,29 +92,6 @@
 
                                 getBlock('blocks/info_crew.php', $actor);
 
-    /*Filmographie*/
-    $query = 'SELECT DISTINCT title FROM movie JOIN moviehasperson ON movie.id=moviehasperson.idMovie WHERE idPerson="'.$actor['idPerson'].'"';
-    $stmt = mysqli_prepare($link, $query)
-        or die('Échec de préparation de la requête : ' . mysqli_error($link));
-    /*mysqli_stmt_bind_param($stmt, "i") // type: i, d, s or b
-        or die('Échec de paramétrage de la requête : ' . mysqli_error($link));*/
-    mysqli_stmt_execute($stmt)
-        or die('Erreur dans la requête : ' . mysqli_error($link));
-
-    $result = mysqli_stmt_get_result($stmt);
-    if (mysqli_num_rows($result) != 0) 
-        {
-            $filmo_movies = [];
-            while ($filmo_movie = mysqli_fetch_array($result, MYSQLI_ASSOC)) 
-            {
-                $filmo_movies[] = $filmo_movie;
-            }
-        } 
-        else 
-        {
-            echo 'Pas de résultats';
-        }
-
                                 echo '<section id="section_filmographie">
                                     <h1>Filmographie</h1>';
                                             foreach ($filmo_movies as $filmo_movie) 
