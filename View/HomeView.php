@@ -1,41 +1,3 @@
-<?php
-
-// Chargement des classes
-require_once('Model.php');
-
-function listPosts()
-{
-    $postManager = new PostManager(); // Création d'un objet
-    $posts = $postManager->getPosts(); // Appel d'une fonction de cet objet
-
-    require('view/frontend/listPostsView.php');
-}
-
-
-
-function addComment($postId, $author, $comment)
-{
-    $commentManager = new CommentManager();
-
-    $affectedLines = $commentManager->postComment($postId, $author, $comment);
-
-    if ($affectedLines === false) {
-        throw new Exception('Impossible d\'ajouter le commentaire !');
-    }
-    else {
-        header('Location: index.php?action=post&id=' . $postId);
-    }
-}
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -64,21 +26,22 @@ function addComment($postId, $author, $comment)
                     <div class="liste_index">
                         <h1>Liste alphabétique des films</h1>
                         <?php
-                            foreach ($films as $film) 
+                            while ($movie = $movies->fetch())
                             {
-                                ?>
+                            ?>
                                 <p>
-                                    <span><a href="movie.php?title=<?php echo $film['title']; ?>&amp;id=<?php echo $film['id']; ?>"><?php echo $film['title']; ?></a></span>
+                                    <span><a href="movie.php?title=<?php echo $movie['title']; ?>&amp;id=<?php echo $movie['id']; ?>"><?php echo $movie['title']; ?></a></span>
                                 </p>
                                 <?php
                             } 
+                            $movies->closeCursor();
                         ?>
                     </div>
 
                     <div class="liste_index">
                         <h1>Liste alphabétique des réalisateurs</h1>
                         <?php
-                            foreach ($directors as $director) 
+                            while ($director = $directors->fetch())
                             {
                                 ?>
                                 <p>
@@ -86,13 +49,14 @@ function addComment($postId, $author, $comment)
                                 </p>
                                 <?php 
                             } 
+                            $directors->closeCursor();
                         ?>
                     </div>
                     
                     <div class="liste_index">
                         <h1>Liste alphabétique des acteurs</h1>
                         <?php
-                            foreach ($actors as $actor) 
+                            while ($actor = $actors->fetch())
                             {
                                 ?>
                                 <p>
@@ -100,6 +64,7 @@ function addComment($postId, $author, $comment)
                                 </p>
                                 <?php 
                             } 
+                            $actors->closeCursor();
                         ?>
                     </div>
                     
