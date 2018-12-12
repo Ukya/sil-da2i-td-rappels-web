@@ -30,7 +30,7 @@
                             {
                             ?>
                                 <p>
-                                    <span><a href="movie.php?title=<?php echo $movie['title']; ?>&amp;id=<?php echo $movie['id']; ?>"><?php echo $movie['title']; ?></a></span>
+                                    <span><a href="index_test.php?page=movie&amp;title=<?php echo $movie['title']; ?>&amp;id=<?php echo $movie['id']; ?>"><?php echo $movie['title']; ?></a></span>
                                 </p>
                                 <?php
                             } 
@@ -41,15 +41,14 @@
                     <div class="liste_index">
                         <h1>Liste alphabétique des réalisateurs</h1>
                         <?php
-                            while ($director = $directors->fetch())
+                            foreach ($directors as $director) 
                             {
                                 ?>
                                 <p>
-                                    <span><a href="director.php?name=<?php echo $director['firstname'] . '_' . $director['lastname']; ?>&amp;id=<?php echo $director['id']; ?>"><?php echo $director['firstname'] . ' ' . $director['lastname']; ?></a></span>
+                                    <span><a href="index_test.php?page=director&amp;name=<?php echo $director['firstname'] . '_' . $director['lastname']; ?>&amp;id=<?php echo $director['idPerson']; ?>"><?php echo $director['firstname'] . ' ' . $director['lastname']; ?></a></span>
                                 </p>
                                 <?php 
                             } 
-                            $directors->closeCursor();
                         ?>
                     </div>
                     
@@ -60,7 +59,7 @@
                             {
                                 ?>
                                 <p>
-                                    <span><a href="director.php?name=<?php echo $actor['firstname'] . '_' . $actor['lastname']; ?>&amp;id=<?php echo $actor['id']; ?>"><?php echo $actor['firstname'] . ' ' . $actor['lastname']; ?></a></span>
+                                    <span><a href="index_test.php?page=actor&amp;name=<?php echo $actor['firstname'] . '_' . $actor['lastname']; ?>&amp;id=<?php echo $actor['idPerson']; ?>"><?php echo $actor['firstname'] . ' ' . $actor['lastname']; ?></a></span>
                                 </p>
                                 <?php 
                             } 

@@ -6,7 +6,7 @@ class Movie
 	{
 		try
 		{
-			$db = new PDO('mysql:host=localhost;dbname=film_bd;charset=utf8', 'root', '');
+			$db = new PDO('mysql:host=localhost;dbname=movie_db;charset=utf8', 'root', '');
 		}
 		catch (Exception $e)
 		{
@@ -21,14 +21,14 @@ class Movie
 	{
 		try
 		{
-			$db = new PDO('mysql:host=localhost;dbname=film_bd;charset=utf8', 'root', '');
+			$db = new PDO('mysql:host=localhost;dbname=movie_db;charset=utf8', 'root', '');
 		}
 		catch (Exception $e)
 		{
 		        die('Erreur : ' . $e->getMessage());
 		}
 
-		$request = $db->prepare('SELECT * FROM moviehasperson JOIN movie ON moviehasperson.idMovie = movie.id JOIN moviehaspicture ON movie.id = moviehaspicture.idMovie JOIN picture ON moviehaspicture.idPicture = picture.id WHERE movie.id = ?');
+		$request = $db->prepare('SELECT * FROM person JOIN moviehasperson ON person.id = moviehasperson.idPerson JOIN movie ON moviehasperson.idMovie = movie.id JOIN moviehaspicture ON movie.id = moviehaspicture.idMovie JOIN picture ON moviehaspicture.idPicture = picture.id WHERE movie.id = ?');
         $request->execute(array($idMovie));
         $movie = $request->fetch();
 

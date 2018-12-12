@@ -8,26 +8,16 @@ require_once('Model/Movie.php');
 class HomeController
 {
 
-    public function listMovies()
+    public function DisplayHome()
     {
-        $movie = new Movie(); // Création d'un objet
-        $movies = $movie->getAllMovies(); // Appel d'une fonction de cet objet
+        $movie = new Movie(); 
+        $movies = $movie->getAllMovies(); 
 
-        require('View/HomeView.php');
-    }
+        $director = new Director(); 
+        $directors = $director->getAllDirectors(); 
 
-    public function listDirectors()
-    {
-        $director = new Director(); // Création d'un objet
-        $directors = $director->getAllDirectors(); // Appel d'une fonction de cet objet
-
-        require('View/HomeView.php');
-    }
-
-    public function listActors()
-    {
-        $actor = new Actor(); // Création d'un objet
-        $actors = $actor->getAllActors(); // Appel d'une fonction de cet objet
+        $actor = new Actor(); 
+        $actors = $actor->getAllActors(); 
 
         require('View/HomeView.php');
     }
