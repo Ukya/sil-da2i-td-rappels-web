@@ -11,7 +11,8 @@ class MovieController
     public function DisplayMovie($idMovie)
     {
         $movie = new Movie(); 
-        $movie_info = $movie->getBaseInfos($idMovie); 
+        $movie_info = $movie->getBaseInfos($idMovie);
+        $movie_actors = $movie->getMovieActors($idMovie); 
 
         $director = new Director(); 
         $directors = $director->getAllDirectors(); 

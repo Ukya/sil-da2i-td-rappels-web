@@ -34,4 +34,23 @@ class Movie
 
         return $movie;
 	}
+
+	public function getMovieActors($idMovie)
+	{
+		try
+		{
+			$db = new PDO('mysql:host=localhost;dbname=movie_db;charset=utf8', 'root', '');
+		}
+		catch (Exception $e)
+		{
+		        die('Erreur : ' . $e->getMessage());
+		}
+
+		
+		$request = $db->prepare('SELECT * FROM moviehasperson JOIN person ON moviehasperson.idPerson = person.id WHERE movie.id = ?');
+		$request->execute(array($idMovie));
+        $movie_actors = $request->fetch();
+
+		return $request;
+	}
 }
