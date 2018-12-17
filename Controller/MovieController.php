@@ -13,7 +13,10 @@ class MovieController
         $movie = new Movie(); 
         $movie_info = $movie->getBaseInfos($idMovie);
         $movie_actors = $movie->getMovieActors($idMovie); 
-
+        /*$tab_mov = [
+            "cle" => $movie_info, 
+        ]
+        $tab_mov["cle"]*/
         $director = new Director(); 
         $directors = $director->getAllDirectors(); 
 
@@ -24,3 +27,5 @@ class MovieController
     }
 
 }
+
+
